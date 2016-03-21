@@ -1,0 +1,16 @@
+[
+{
+  "modid": "kworldgen",
+  "name": "KWorldGen",
+  "description": "A simple mod for experimentation with Minecraft world generation.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Kneelawk"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
