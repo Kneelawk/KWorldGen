@@ -20,12 +20,24 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "0.0.1"
-group= "org.kneelawk.kworldgen" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "kworldgen"
+
+ext.configFile = file "build.properties"
+
+configFile.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    project.ext.config = new ConfigSlurper().parse prop
+}
+
+version = config.mod.version
+group= config.mod.group // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = config.mod.name
+
+def forgeZip = "forge-${config.minecraft.version}-mdk.zip"
+def forgeURL = "http://files.minecraftforge.net/maven/net/minecraftforge/forge/${config.minecraft.version}/forge-${config.minecraft.version}-mdk.zip"
 
 minecraft {
-    version = "1.9-12.16.0.1780-1.9"
+    version = config.minecraft.version
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.
@@ -79,4 +91,34 @@ processResources
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+task downloadForgeZip {
+	onlyIf { !file('eclipse').exists() }
+	doLast {
+		ant.get(src: forgeURL, dest: forgeZip, verbose: true)
+	}
+}
+
+task extractEclipseDir(type: Copy, dependsOn: downloadForgeZip) {
+	onlyIf { !file('eclipse').exists() }
+	from zipTree(forgeZip)
+	include 'eclipse/'
+	into 'eclipse'
+	eachFile {
+		it.path = it.path.substring(it.path.indexOf('/') + 1)
+	}
+	includeEmptyDirs = false
+}
+
+task removeForgeZip(type: Delete, dependsOn: extractEclipseDir) {
+	delete forgeZip
+}
+
+task downloadEclipseDir(dependsOn: removeForgeZip) {
+	description 'Download the eclipse folder for use in development.'
+}
+
+getTasksByName('eclipse', false).each {
+	it.dependsOn += downloadEclipseDir
 }
