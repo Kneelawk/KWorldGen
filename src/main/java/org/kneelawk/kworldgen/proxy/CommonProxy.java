@@ -16,8 +16,11 @@ public class CommonProxy {
 		KWGConfig.save();
 	}
 
-	public void init(FMLInitializationEvent event) {
+	public void registerItemRenders() {
+	}
 
+	public void init(FMLInitializationEvent event) {
+		registerItemRenders();
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {

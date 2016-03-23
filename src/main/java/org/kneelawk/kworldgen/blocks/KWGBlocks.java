@@ -3,6 +3,7 @@ package org.kneelawk.kworldgen.blocks;
 import java.util.HashMap;
 
 import org.kneelawk.kworldgen.config.KWGConfig;
+import org.kneelawk.kworldgen.log.KWGLog;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -26,5 +27,13 @@ public class KWGBlocks {
 		GameRegistry.registerBlock(block, name);
 		blocks.put(name, block);
 		return block;
+	}
+
+	public static Block getBlock(String name) {
+		return blocks.get(name);
+	}
+
+	public static HashMap<String, Block> getBlockList() {
+		return blocks;
 	}
 }
