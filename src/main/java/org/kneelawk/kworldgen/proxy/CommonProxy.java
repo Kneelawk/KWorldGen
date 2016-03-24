@@ -13,6 +13,7 @@ public class CommonProxy {
 		KWGLog.init(event.getModLog());
 		KWGConfig.init(event.getSuggestedConfigurationFile());
 		KWGBlocks.init();
+		registerItemRenders();
 		KWGConfig.save();
 	}
 
@@ -20,7 +21,6 @@ public class CommonProxy {
 	}
 
 	public void init(FMLInitializationEvent event) {
-		registerItemRenders();
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {
