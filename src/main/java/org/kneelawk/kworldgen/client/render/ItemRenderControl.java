@@ -36,11 +36,11 @@ public class ItemRenderControl {
 		registerItem(item, 0, name, slot);
 	}
 
-	public static void registerBlock(Block block, String name, String slot) {
-		registerItem(Item.getItemFromBlock(block), name, slot);
+	public static void registerBlock(Block block, int meta, String name, String slot) {
+		registerItem(Item.getItemFromBlock(block), meta, name, slot);
 	}
 
 	public static void registerBlock(Block block, String name) {
-		registerBlock(block, name, "normal");
+		registerBlock(block, 0, name, "normal");
 	}
 }
