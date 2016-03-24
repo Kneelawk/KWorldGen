@@ -1,7 +1,13 @@
 {
+    "forge_marker" : 1,
+    "defaults": {
+        "textures": {
+            "all": "kworldgen:blocks/blockPhinterine"
+        }
+    },
     "variants": {
         "normal": {
-            "model": "kworldgen:blockPhinterine"
+            "model": "kworldgen:block"
         }
     }
 }

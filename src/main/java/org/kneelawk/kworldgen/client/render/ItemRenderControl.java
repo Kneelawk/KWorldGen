@@ -41,6 +41,6 @@ public class ItemRenderControl {
 	}
 
 	public static void registerBlock(Block block, String name) {
-		registerBlock(block, name, "inventory");
+		registerBlock(block, name, "normal");
 	}
 }
