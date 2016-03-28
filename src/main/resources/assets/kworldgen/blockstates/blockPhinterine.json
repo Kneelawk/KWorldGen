@@ -1,6 +1,9 @@
 {
     "forge_marker": 1,
     "defaults": {
+        "textures": {
+            "all": "kworldgen:blocks/blockPhinterineBricks"
+        },
         "model": "kworldgen:block"
     },
     "variants": {
@@ -8,6 +11,11 @@
             "bricks": {
                 "textures": {
                     "all": "kworldgen:blocks/blockPhinterineBricks"
+                }
+            },
+            "block": {
+                "textures": {
+                    "all": "kworldgen:blocks/blockPhinterineBlock"
                 }
             }
         }

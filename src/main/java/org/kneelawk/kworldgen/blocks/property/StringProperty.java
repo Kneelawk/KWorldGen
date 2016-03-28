@@ -7,6 +7,7 @@ import net.minecraft.block.properties.IProperty;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
 
 public class StringProperty implements IProperty<String> {
 
@@ -15,11 +16,11 @@ public class StringProperty implements IProperty<String> {
 
 	public StringProperty(String name, Collection<String> values) {
 		this.name = name;
-		this.values = ImmutableSet.of(values);
+		this.values = ImmutableSet.copyOf(values);
 	}
 
 	public StringProperty(String name, String... values) {
-		this(name, Arrays.asList(values));
+		this(name, Lists.newArrayList(values));
 	}
 
 	@Override
