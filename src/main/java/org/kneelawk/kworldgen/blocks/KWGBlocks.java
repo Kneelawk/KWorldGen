@@ -26,7 +26,6 @@ public class KWGBlocks {
 	public static void init() {
 		add(Material.rock, "blockPhinterine", CreativeTabs.tabBlock, "bricks",
 				"block");
-		KWGLog.info("Block meta maps: " + metaMaps);
 	}
 
 	public static Block add(Block block, String name, CreativeTabs tab) {

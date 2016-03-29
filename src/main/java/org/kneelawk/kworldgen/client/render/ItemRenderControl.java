@@ -21,18 +21,13 @@ public class ItemRenderControl {
 	}
 
 	public static void registerBlocks() {
-		KWGLog.info("Registering block item renders...");
 		Set<Entry<String, Block>> blocks = KWGBlocks.getBlockList().entrySet();
 		for (Entry<String, Block> entry : blocks) {
-			KWGLog.info("Registering block item renders for: " + entry.getKey());
 			Set<Entry<String, Integer>> metaValues = KWGBlocks.getMetas(
 					entry.getKey()).entrySet();
-			KWGLog.info("Block meta map: " + KWGBlocks.getMetas(entry.getKey()));
 			for (Entry<String, Integer> e : metaValues) {
 				registerBlock(entry.getValue(), e.getValue(), entry.getKey(),
 						e.getKey());
-				KWGLog.info("Registering: " + entry.getKey() + ", slot: "
-						+ e.getKey() + ", meta: " + e.getValue());
 			}
 		}
 	}
