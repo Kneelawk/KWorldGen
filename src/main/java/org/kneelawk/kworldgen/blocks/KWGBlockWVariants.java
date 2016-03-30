@@ -26,7 +26,7 @@ public class KWGBlockWVariants extends KWGBlock implements IBlockWMeta {
 
 	public static final String TYPE_PROPERTY_NAME = "type";
 
-	public static StringProperty tmpProperty;
+	public static StringProperty tmp_typeProperty;
 
 	protected StringProperty property;
 	protected HashBiMap<String, Integer> metaMap;
@@ -34,14 +34,14 @@ public class KWGBlockWVariants extends KWGBlock implements IBlockWMeta {
 	public KWGBlockWVariants(Material blockMaterialIn,
 			MapColor blockMapColorIn, String... types) {
 		super(blockMaterialIn, blockMapColorIn);
-		property = tmpProperty;
+		property = tmp_typeProperty;
 		metaMap = HashBiMap.create();
 		buildMetaMap(types);
 	}
 
 	public KWGBlockWVariants(Material materialIn, String... types) {
 		super(materialIn);
-		property = tmpProperty;
+		property = tmp_typeProperty;
 		metaMap = HashBiMap.create();
 		buildMetaMap(types);
 	}
@@ -100,7 +100,7 @@ public class KWGBlockWVariants extends KWGBlock implements IBlockWMeta {
 	@Override
 	protected BlockStateContainer createBlockState() {
 		if (property == null)
-			return new BlockStateContainer(this, tmpProperty);
+			return new BlockStateContainer(this, tmp_typeProperty);
 		return new BlockStateContainer(this, property);
 	}
 

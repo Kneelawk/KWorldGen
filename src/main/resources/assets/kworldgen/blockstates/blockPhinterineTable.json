@@ -1,0 +1,15 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "leg_side": "blocks/log_oak",
+            "leg_top": "blocks/log_oak_top",
+            "leg_bottom": "blocks/log_oak_top"
+        }
+    },
+    "variants": {
+        "normal": {
+            "model": "kworldgen:table"
+        }
+    }
+}

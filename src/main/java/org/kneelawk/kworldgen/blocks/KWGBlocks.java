@@ -8,6 +8,7 @@ import java.util.Set;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.util.EnumFacing;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import org.kneelawk.kworldgen.blocks.items.KWGItemBlockWVariants;
@@ -16,16 +17,16 @@ import org.kneelawk.kworldgen.config.KWGConfig;
 import org.kneelawk.kworldgen.log.KWGLog;
 
 import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Table;
 
 public class KWGBlocks {
 	private static HashMap<String, Block> blocks = new HashMap<String, Block>();
-	private static HashBasedTable<String, String, Integer> metaMaps = HashBasedTable
-			.create();
+	private static HashBasedTable<String, String, Integer> metaMaps = HashBasedTable.create();
 
 	public static void init() {
-		add(Material.rock, "blockPhinterine", CreativeTabs.tabBlock, "bricks",
-				"block");
+		add(Material.rock, "blockPhinterine", CreativeTabs.tabBlock, "bricks", "block");
+		add(new KWGBlock(Material.rock), "blockPhinterineTable", CreativeTabs.tabDecorations);
 	}
 
 	public static Block add(Block block, String name, CreativeTabs tab) {
@@ -33,11 +34,8 @@ public class KWGBlocks {
 			return block;
 		block.setUnlocalizedName(name);
 		block.setCreativeTab(tab);
-		// TODO block textures
-		// Block textures are really different now
 		if (block instanceof IBlockWMeta) {
-			addMapToTable(metaMaps, name,
-					((IBlockWMeta) block).getPossibleMetaValues());
+			addMapToTable(metaMaps, name, ((IBlockWMeta) block).getPossibleMetaValues());
 		} else {
 			metaMaps.put(name, "normal", 0);
 		}
@@ -46,26 +44,21 @@ public class KWGBlocks {
 		return block;
 	}
 
-	public static Block add(Material mat, String baseName, CreativeTabs tab,
-			String... types) {
+	public static Block add(Material mat, String baseName, CreativeTabs tab, String... types) {
 		// used to get around blocks requesting property creation before
 		// initialization
-		KWGBlockWVariants.tmpProperty = new StringProperty(
-				KWGBlockWVariants.TYPE_PROPERTY_NAME, types);
+		KWGBlockWVariants.tmp_typeProperty = new StringProperty(KWGBlockWVariants.TYPE_PROPERTY_NAME, types);
 		KWGBlockWVariants block = new KWGBlockWVariants(mat, types);
-		KWGBlockWVariants.tmpProperty = null;
+		KWGBlockWVariants.tmp_typeProperty = null;
 		block.setUnlocalizedName(baseName);
 		block.setCreativeTab(tab);
-		addMapToTable(metaMaps, baseName,
-				((IBlockWMeta) block).getPossibleMetaValues());
-		GameRegistry
-				.registerBlock(block, KWGItemBlockWVariants.class, baseName);
+		addMapToTable(metaMaps, baseName, ((IBlockWMeta) block).getPossibleMetaValues());
+		GameRegistry.registerBlock(block, KWGItemBlockWVariants.class, baseName);
 		blocks.put(baseName, block);
 		return block;
 	}
 
-	private static <R, C, V> void addMapToTable(Table<R, C, V> table, R row,
-			Map<C, V> map) {
+	private static <R, C, V> void addMapToTable(Table<R, C, V> table, R row, Map<C, V> map) {
 		Set<Entry<C, V>> set = map.entrySet();
 		for (Entry<C, V> entry : set) {
 			table.put(row, entry.getKey(), entry.getValue());
