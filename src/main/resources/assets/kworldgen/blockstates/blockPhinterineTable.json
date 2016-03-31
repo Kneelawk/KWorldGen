@@ -4,7 +4,10 @@
         "textures": {
             "leg_side": "blocks/log_oak",
             "leg_top": "blocks/log_oak_top",
-            "leg_bottom": "blocks/log_oak_top"
+            "leg_bottom": "blocks/log_oak_top",
+            "surface_side": "kworldgen:blocks/blockPhinterineBlock",
+            "surface_top": "kworldgen:blocks/blockPhinterineBlock",
+            "surface_bottom": "kworldgen:blocks/blockPhinterineBlock"
         }
     },
     "variants": {

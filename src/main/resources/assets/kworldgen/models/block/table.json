@@ -6,67 +6,143 @@
     "elements": [
         {
             "__comment": "x-z- (northwest) leg",
-            "from": [0, 0, 0],
-            "to": [4, 12, 4],
+            "from": [
+                0,
+                0,
+                0
+            ],
+            "to": [
+                4,
+                12,
+                4
+            ],
             "faces": {
                 "down": {
-                    "uv": [0, 12, 4, 16],
+                    "uv": [
+                        0,
+                        12,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_bottom",
                     "cullface": "down"
                 },
                 "up": {
-                    "uv": [0, 0, 4, 4],
+                    "uv": [
+                        0,
+                        0,
+                        4,
+                        4
+                    ],
                     "texture": "#leg_top"
                 },
                 "north": {
-                    "uv": [12, 4, 16, 16],
+                    "uv": [
+                        12,
+                        4,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_side",
                     "cullface": "north"
                 },
                 "south": {
-                    "uv": [0, 4, 4, 16],
+                    "uv": [
+                        0,
+                        4,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_side"
                 },
                 "west": {
-                    "uv": [0, 4, 4, 16],
+                    "uv": [
+                        0,
+                        4,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_side",
                     "cullface": "west"
                 },
                 "east": {
-                    "uv": [12, 4, 16, 16],
+                    "uv": [
+                        12,
+                        4,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_side"
                 }
             }
         },
         {
             "__comment": "x+z- (northeast) leg",
-            "from": [12, 0, 0],
-            "to": [16, 12, 4],
+            "from": [
+                12,
+                0,
+                0
+            ],
+            "to": [
+                16,
+                12,
+                4
+            ],
             "faces": {
                 "down": {
-                    "uv": [12, 12, 16, 16],
+                    "uv": [
+                        12,
+                        12,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_bottom",
                     "cullface": "down"
                 },
                 "up": {
-                    "uv": [12, 0, 16, 4],
+                    "uv": [
+                        12,
+                        0,
+                        16,
+                        4
+                    ],
                     "texture": "#leg_top"
                 },
                 "north": {
-                    "uv": [0, 4, 4, 16],
+                    "uv": [
+                        0,
+                        4,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_side",
                     "cullface": "north"
                 },
                 "south": {
-                    "uv": [12, 4, 16, 16],
+                    "uv": [
+                        12,
+                        4,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_side"
                 },
                 "west": {
-                    "uv": [0, 4, 4, 16],
+                    "uv": [
+                        0,
+                        4,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_side"
                 },
                 "east": {
-                    "uv": [12, 4, 16, 16],
+                    "uv": [
+                        12,
+                        4,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_side",
                     "cullface": "east"
                 }
@@ -74,68 +150,218 @@
         },
         {
             "__comment": "x-z+ (southwest) leg",
-            "from": [0, 0, 12],
-            "to": [4, 12, 16],
+            "from": [
+                0,
+                0,
+                12
+            ],
+            "to": [
+                4,
+                12,
+                16
+            ],
             "faces": {
                 "down": {
-                    "uv": [0, 0, 4, 4],
+                    "uv": [
+                        0,
+                        0,
+                        4,
+                        4
+                    ],
                     "texture": "#leg_bottom",
                     "cullface": "down"
                 },
                 "up": {
-                    "uv": [0, 12, 4, 16],
+                    "uv": [
+                        0,
+                        12,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_top"
                 },
                 "north": {
-                    "uv": [12, 4, 16, 16],
+                    "uv": [
+                        12,
+                        4,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_side"
                 },
                 "south": {
-                    "uv": [0, 4, 4, 16],
+                    "uv": [
+                        0,
+                        4,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_side",
                     "cullface": "south"
                 },
                 "west": {
-                    "uv": [12, 4, 16, 16],
+                    "uv": [
+                        12,
+                        4,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_side",
                     "cullface": "west"
                 },
                 "east": {
-                    "uv": [0, 4, 4, 16],
+                    "uv": [
+                        0,
+                        4,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_side"
                 }
             }
         },
         {
             "__comment": "x+z+ (southeast) leg",
-            "from": [12, 0, 12],
-            "to": [16, 12, 16],
+            "from": [
+                12,
+                0,
+                12
+            ],
+            "to": [
+                16,
+                12,
+                16
+            ],
             "faces": {
                 "down": {
-                    "uv": [12, 0, 16, 4],
+                    "uv": [
+                        12,
+                        0,
+                        16,
+                        4
+                    ],
                     "texture": "#leg_bottom",
                     "cullface": "down"
                 },
                 "up": {
-                    "uv": [12, 12, 16, 16],
+                    "uv": [
+                        12,
+                        12,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_top"
                 },
                 "north": {
-                    "uv": [0, 4, 4, 16],
+                    "uv": [
+                        0,
+                        4,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_side"
                 },
                 "south": {
-                    "uv": [12, 4, 16, 16],
+                    "uv": [
+                        12,
+                        4,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_side",
                     "cullface": "south"
                 },
                 "west": {
-                    "uv": [12, 4, 16, 16],
+                    "uv": [
+                        12,
+                        4,
+                        16,
+                        16
+                    ],
                     "texture": "#leg_side"
                 },
                 "east": {
-                    "uv": [0, 4, 4, 16],
+                    "uv": [
+                        0,
+                        4,
+                        4,
+                        16
+                    ],
                     "texture": "#leg_side",
+                    "cullface": "east"
+                }
+            }
+        },
+        {
+            "__comment": "Table surface",
+            "from": [
+                0,
+                12,
+                0
+            ],
+            "to": [
+                16,
+                16,
+                16
+            ],
+            "faces": {
+                "down": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#surface_bottom"
+                },
+                "up": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        16
+                    ],
+                    "texture": "#surface_top",
+                    "cullface": "up"
+                },
+                "north": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        4
+                    ],
+                    "texture": "#surface_side",
+                    "cullface": "north"
+                },
+                "south": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        4
+                    ],
+                    "texture": "#surface_side",
+                    "cullface": "south"
+                },
+                "west": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        4
+                    ],
+                    "texture": "#surface_side",
+                    "cullface": "west"
+                },
+                "east": {
+                    "uv": [
+                        0,
+                        0,
+                        16,
+                        4
+                    ],
+                    "texture": "#surface_side",
                     "cullface": "east"
                 }
             }
