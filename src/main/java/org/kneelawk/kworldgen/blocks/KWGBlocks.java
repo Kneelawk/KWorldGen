@@ -26,7 +26,7 @@ public class KWGBlocks {
 
 	public static void init() {
 		add(Material.rock, "blockPhinterine", CreativeTabs.tabBlock, "bricks", "block");
-		add(new KWGBlock(Material.rock), "blockPhinterineTable", CreativeTabs.tabDecorations);
+		add(new BlockPhinterineTable(Material.rock), "blockPhinterineTable", CreativeTabs.tabDecorations);
 	}
 
 	public static Block add(Block block, String name, CreativeTabs tab) {
