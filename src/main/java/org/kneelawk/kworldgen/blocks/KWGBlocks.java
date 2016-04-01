@@ -47,9 +47,7 @@ public class KWGBlocks {
 	public static Block add(Material mat, String baseName, CreativeTabs tab, String... types) {
 		// used to get around blocks requesting property creation before
 		// initialization
-		KWGBlockWVariants.tmp_typeProperty = new StringProperty(KWGBlockWVariants.TYPE_PROPERTY_NAME, types);
-		KWGBlockWVariants block = new KWGBlockWVariants(mat, types);
-		KWGBlockWVariants.tmp_typeProperty = null;
+		BlockWVariants block = BlockWVariants.createBlock(mat, types);
 		block.setUnlocalizedName(baseName);
 		block.setCreativeTab(tab);
 		addMapToTable(metaMaps, baseName, ((IBlockWMeta) block).getPossibleMetaValues());

@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-import org.kneelawk.kworldgen.blocks.KWGBlockWVariants;
+import org.kneelawk.kworldgen.blocks.BlockWVariants;
 
 public class KWGItemBlockWVariants extends ItemBlock {
 
@@ -16,7 +16,7 @@ public class KWGItemBlockWVariants extends ItemBlock {
 		super(block);
 		setHasSubtypes(true);
 		setMaxDamage(0);
-		if (!(block instanceof KWGBlockWVariants))
+		if (!(block instanceof BlockWVariants))
 			throw new IllegalArgumentException(
 					"KWGItemBlockWVariants should only be used with KWGBlockWVariants");
 	}
@@ -25,7 +25,7 @@ public class KWGItemBlockWVariants extends ItemBlock {
 	public String getUnlocalizedName(ItemStack stack) {
 		return super.getUnlocalizedName()
 				+ "."
-				+ ((KWGBlockWVariants) block).getNameFromMeta(stack
+				+ ((BlockWVariants) block).getNameFromMeta(stack
 						.getItemDamage());
 	}
 

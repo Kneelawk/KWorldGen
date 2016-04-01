@@ -22,24 +22,23 @@ import org.kneelawk.kworldgen.blocks.property.StringProperty;
 import com.google.common.collect.HashBiMap;
 import com.google.common.collect.ImmutableMap;
 
-public class KWGBlockWVariants extends KWGBlock implements IBlockWMeta {
+public class BlockWVariants extends KWGBlock implements IBlockWMeta {
 
 	public static final String TYPE_PROPERTY_NAME = "type";
 
-	public static StringProperty tmp_typeProperty;
+	protected static StringProperty tmp_typeProperty;
 
 	protected StringProperty property;
 	protected HashBiMap<String, Integer> metaMap;
 
-	public KWGBlockWVariants(Material blockMaterialIn,
-			MapColor blockMapColorIn, String... types) {
+	protected BlockWVariants(Material blockMaterialIn, MapColor blockMapColorIn, String... types) {
 		super(blockMaterialIn, blockMapColorIn);
 		property = tmp_typeProperty;
 		metaMap = HashBiMap.create();
 		buildMetaMap(types);
 	}
 
-	public KWGBlockWVariants(Material materialIn, String... types) {
+	protected BlockWVariants(Material materialIn, String... types) {
 		super(materialIn);
 		property = tmp_typeProperty;
 		metaMap = HashBiMap.create();
@@ -59,16 +58,14 @@ public class KWGBlockWVariants extends KWGBlock implements IBlockWMeta {
 		ImmutableMap.Builder<String, Integer> builder = ImmutableMap.builder();
 		Set<Entry<String, Integer>> set = metaMap.entrySet();
 		for (Entry<String, Integer> entry : set) {
-			builder.put(TYPE_PROPERTY_NAME + "=" + entry.getKey(),
-					entry.getValue());
+			builder.put(TYPE_PROPERTY_NAME + "=" + entry.getKey(), entry.getValue());
 		}
 		return builder.build();
 	}
 
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return getDefaultState().withProperty(property,
-				metaMap.inverse().get(Integer.valueOf(meta)));
+		return getDefaultState().withProperty(property, metaMap.inverse().get(Integer.valueOf(meta)));
 	}
 
 	@Override
@@ -82,11 +79,9 @@ public class KWGBlockWVariants extends KWGBlock implements IBlockWMeta {
 	}
 
 	@Override
-	public IBlockState onBlockPlaced(World worldIn, BlockPos pos,
-			EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
-			EntityLivingBase placer) {
-		return getDefaultState().withProperty(property,
-				metaMap.inverse().get(Integer.valueOf(meta)));
+	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ,
+			int meta, EntityLivingBase placer) {
+		return getDefaultState().withProperty(property, metaMap.inverse().get(Integer.valueOf(meta)));
 	}
 
 	@Override
@@ -106,5 +101,23 @@ public class KWGBlockWVariants extends KWGBlock implements IBlockWMeta {
 
 	public String getNameFromMeta(int meta) {
 		return metaMap.inverse().get(Integer.valueOf(meta));
+	}
+
+	public static BlockWVariants createBlock(Material material, String... types) {
+		// used to get around blocks requesting property creation before
+		// initialization
+		tmp_typeProperty = new StringProperty(TYPE_PROPERTY_NAME, types);
+		BlockWVariants block = new BlockWVariants(material, types);
+		tmp_typeProperty = null;
+		return block;
+	}
+
+	public static BlockWVariants createBlock(Material material, MapColor color, String... types) {
+		// used to get around blocks requesting property creation before
+		// initialization
+		tmp_typeProperty = new StringProperty(TYPE_PROPERTY_NAME, types);
+		BlockWVariants block = new BlockWVariants(material, color, types);
+		tmp_typeProperty = null;
+		return block;
 	}
 }
