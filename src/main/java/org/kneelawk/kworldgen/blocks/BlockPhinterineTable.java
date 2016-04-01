@@ -30,35 +30,7 @@ public class BlockPhinterineTable extends KWGBlock {
 		return false;
 	}
 
-	public boolean isFullyOpaque(IBlockState state) {
-		return false;
-	}
-
 	public boolean isFullBlock(IBlockState state) {
-		return false;
-	}
-
-	public int getLightOpacity(IBlockState state) {
-		return 0;
-	}
-
-	public boolean isBlockNormalCube(IBlockState state) {
-		return false;
-	}
-
-	public boolean isNormalCube(IBlockState state) {
-		return false;
-	}
-
-	public boolean isVisuallyOpaque() {
-		return false;
-	}
-
-	public boolean isBlockSolid(IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
-		return false;
-	}
-
-	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {
 		return false;
 	}
 }
