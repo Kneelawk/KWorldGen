@@ -11,7 +11,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import org.kneelawk.kworldgen.blocks.items.KWGItemBlockWVariants;
+import org.kneelawk.kworldgen.blocks.items.ItemBlockWVariants;
 import org.kneelawk.kworldgen.blocks.property.StringProperty;
 import org.kneelawk.kworldgen.config.KWGConfig;
 import org.kneelawk.kworldgen.log.KWGLog;
@@ -51,7 +51,7 @@ public class KWGBlocks {
 		block.setUnlocalizedName(baseName);
 		block.setCreativeTab(tab);
 		addMapToTable(metaMaps, baseName, ((IBlockWMeta) block).getPossibleMetaValues());
-		GameRegistry.registerBlock(block, KWGItemBlockWVariants.class, baseName);
+		GameRegistry.registerBlock(block, ItemBlockWVariants.class, baseName);
 		blocks.put(baseName, block);
 		return block;
 	}

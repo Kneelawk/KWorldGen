@@ -8,25 +8,21 @@ import net.minecraft.item.ItemStack;
 
 import org.kneelawk.kworldgen.blocks.BlockWVariants;
 
-public class KWGItemBlockWVariants extends ItemBlock {
+public class ItemBlockWVariants extends ItemBlock {
 
-	protected HashMap<Integer, String> typeMap;
-
-	public KWGItemBlockWVariants(Block block) {
+	public ItemBlockWVariants(Block block) {
 		super(block);
 		setHasSubtypes(true);
 		setMaxDamage(0);
 		if (!(block instanceof BlockWVariants))
 			throw new IllegalArgumentException(
-					"KWGItemBlockWVariants should only be used with KWGBlockWVariants");
+					"ItemBlockWVariants should only be used with BlockWVariants");
 	}
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return super.getUnlocalizedName()
-				+ "."
-				+ ((BlockWVariants) block).getNameFromMeta(stack
-						.getItemDamage());
+		return super.getUnlocalizedName() + "." + ((BlockWVariants) block)
+				.getNameFromMeta(stack.getItemDamage());
 	}
 
 	@Override

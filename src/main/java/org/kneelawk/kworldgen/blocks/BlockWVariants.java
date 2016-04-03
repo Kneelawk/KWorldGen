@@ -24,7 +24,7 @@ import com.google.common.collect.ImmutableMap;
 
 public class BlockWVariants extends KWGBlock implements IBlockWMeta {
 
-	public static final String TYPE_PROPERTY_NAME = "type";
+	protected static final String TYPE_PROPERTY_NAME = "type";
 
 	protected static StringProperty tmp_typeProperty;
 
