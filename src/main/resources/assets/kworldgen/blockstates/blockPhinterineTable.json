@@ -8,11 +8,72 @@
             "surface_side": "kworldgen:blocks/blockPhinterineBlock",
             "surface_top": "kworldgen:blocks/blockPhinterineBlock",
             "surface_bottom": "kworldgen:blocks/blockPhinterineBlock"
-        }
+        },
+        "model": "kworldgen:table"
     },
     "variants": {
         "normal": {
-            "model": "kworldgen:table"
+            
+        },
+        "phinterine": {
+            "bricks": {
+                "textures": {
+                    "surface_side": "kworldgen:blocks/blockPhinterineBricks",
+                    "surface_top": "kworldgen:blocks/blockPhinterineBricks",
+                    "surface_bottom": "kworldgen:blocks/blockPhinterineBricks"
+                }
+            },
+            "block": {
+                "textures": {
+                    "surface_side": "kworldgen:blocks/blockPhinterineBlock",
+                    "surface_top": "kworldgen:blocks/blockPhinterineBlock",
+                    "surface_bottom": "kworldgen:blocks/blockPhinterineBlock"
+                }
+            }
+        },
+        "wood": {
+            "oak": {
+                "textures": {
+                    "leg_side": "blocks/log_oak",
+                    "leg_top": "blocks/log_oak_top",
+                    "leg_bottom": "blocks/log_oak_top"
+                }
+            },
+            "spruce": {
+                "textures": {
+                    "leg_side": "blocks/log_spruce",
+                    "leg_top": "blocks/log_spruce_top",
+                    "leg_bottom": "blocks/log_spruce_top"
+                }
+            },
+            "birch": {
+                "textures": {
+                    "leg_side": "blocks/log_birch",
+                    "leg_top": "blocks/log_birch_top",
+                    "leg_bottom": "blocks/log_birch_top"
+                }
+            },
+            "jungle": {
+                "textures": {
+                    "leg_side": "blocks/log_jungle",
+                    "leg_top": "blocks/log_jungle_top",
+                    "leg_bottom": "blocks/log_jungle_top"
+                }
+            },
+            "acacia": {
+                "textures": {
+                    "leg_side": "blocks/log_acacia",
+                    "leg_top": "blocks/log_acacia_top",
+                    "leg_bottom": "blocks/log_acacia_top"
+                }
+            },
+            "dark_oak": {
+                "textures": {
+                    "leg_side": "blocks/log_dark_oak",
+                    "leg_top": "blocks/log_dark_oak_top",
+                    "leg_bottom": "blocks/log_dark_oak_top"
+                }
+            }
         }
     }
 }
