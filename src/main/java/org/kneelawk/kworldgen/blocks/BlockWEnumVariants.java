@@ -138,7 +138,7 @@ public abstract class BlockWEnumVariants extends KWGBlock
 		int meta = 0;
 		for (int i = 0; i < properties.size(); i++) {
 			if (i > 0) {
-				meta *= ordinalsList.get(i - 1).size();
+				meta *= ordinalsList.get(i).size();
 			}
 			meta += ((Enum) state.getValue(properties.get(i))).ordinal();
 		}
@@ -184,7 +184,7 @@ public abstract class BlockWEnumVariants extends KWGBlock
 				return -1;
 			}
 			if (i > 0) {
-				meta *= ordinalsList.get(i - 1).size();
+				meta *= ordinalsList.get(i).size();
 			}
 			meta += enums.get(i).ordinal();
 		}

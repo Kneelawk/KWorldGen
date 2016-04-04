@@ -1,0 +1,15 @@
+tile.blockPhinterine.bricks.name=Phinterine Bricks
+tile.blockPhinterine.block.name=Phinterine Block
+
+tile.blockPhinterineTable.phinterine#bricks.wood#oak.name=Oak Wood Phinterine Bricks Table
+tile.blockPhinterineTable.phinterine#bricks.wood#spruce.name=Spruce Wood Phinterine Bricks Table
+tile.blockPhinterineTable.phinterine#bricks.wood#birch.name=Birch Wood Phinterine Bricks Table
+tile.blockPhinterineTable.phinterine#bricks.wood#jungle.name=Jungle Wood Phinterine Bricks Table
+tile.blockPhinterineTable.phinterine#bricks.wood#acacia.name=Acaia Wood Phinterine Bricks Table
+tile.blockPhinterineTable.phinterine#bricks.wood#dark_oak.name=Dark Oak Wood Phinterine Bricks Table
+tile.blockPhinterineTable.phinterine#block.wood#oak.name=Oak Wood Phinterine Block Table
+tile.blockPhinterineTable.phinterine#block.wood#spruce.name=Spruce Wood Phinterine Block Table
+tile.blockPhinterineTable.phinterine#block.wood#birch.name=Birch Wood Phinterine Block Table
+tile.blockPhinterineTable.phinterine#block.wood#jungle.name=Jungle Wood Phinterine Block Table
+tile.blockPhinterineTable.phinterine#block.wood#acacia.name=Acaia Wood Phinterine Block Table
+tile.blockPhinterineTable.phinterine#block.wood#dark_oak.name=Dark Oak Wood Phinterine Block Table
