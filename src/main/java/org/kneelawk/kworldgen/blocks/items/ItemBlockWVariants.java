@@ -21,8 +21,11 @@ public class ItemBlockWVariants extends ItemBlock {
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return super.getUnlocalizedName() + "." + ((BlockWVariants) block)
-				.getNameFromMeta(stack.getItemDamage());
+		String name =
+				((BlockWVariants) block).getNameFromMeta(stack.getItemDamage());
+		if (name == null || "".equals(name))
+			return super.getUnlocalizedName(stack);
+		return super.getUnlocalizedName(stack) + "." + name;
 	}
 
 	@Override
