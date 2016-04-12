@@ -24,8 +24,8 @@ public class KWGBlocks {
 			HashBasedTable.create();
 
 	public static void init() {
-		add(Material.rock, "blockPhinterine", CreativeTabs.tabBlock, "bricks",
-				"block");
+		add(new BlockPhinterine(Material.rock), "blockPhinterine",
+				ItemBlockWEnumVariants.class, CreativeTabs.tabBlock);
 		add(new BlockPhinterineTable(Material.rock), "blockPhinterineTable",
 				ItemBlockWEnumVariants.class, CreativeTabs.tabDecorations);
 	}

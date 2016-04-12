@@ -17,6 +17,16 @@
                 "textures": {
                     "all": "kworldgen:blocks/blockPhinterineBlock"
                 }
+            },
+            "tiles": {
+                "textures": {
+                    "all": "kworldgen:blocks/blockPhinterineTiles"
+                }
+            },
+            "chiseled": {
+                "textures": {
+                    "all": "kworldgen:blocks/blockPhinterineChiseled"
+                }
             }
         }
     }

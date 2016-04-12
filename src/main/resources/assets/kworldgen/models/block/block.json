@@ -1,7 +1,6 @@
 {
     "parent": "block/cube",
-    "textures": 
-    {
+    "textures": {
         "particle": "#all",
         "down": "#all",
         "up": "#all",

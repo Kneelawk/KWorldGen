@@ -26,6 +26,20 @@
                     "surface_top": "kworldgen:blocks/blockPhinterineBlock",
                     "surface_bottom": "kworldgen:blocks/blockPhinterineBlock"
                 }
+            },
+            "tiles": {
+                "textures": {
+                    "surface_side": "kworldgen:blocks/blockPhinterineTiles",
+                    "surface_top": "kworldgen:blocks/blockPhinterineTiles",
+                    "surface_bottom": "kworldgen:blocks/blockPhinterineTiles"
+                }
+            },
+            "chiseled": {
+                "textures": {
+                    "surface_side": "kworldgen:blocks/blockPhinterineChiseled",
+                    "surface_top": "kworldgen:blocks/blockPhinterineChiseled",
+                    "surface_bottom": "kworldgen:blocks/blockPhinterineChiseled"
+                }
             }
         },
         "wood": {
