@@ -9,7 +9,7 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 
-public class BlockPhinterine extends BlockWEnumVariants {
+public class BlockPhinterine extends BlockWVariants {
 
 	public BlockPhinterine(Material blockMaterialIn, MapColor blockMapColorIn) {
 		super(blockMaterialIn, blockMapColorIn);

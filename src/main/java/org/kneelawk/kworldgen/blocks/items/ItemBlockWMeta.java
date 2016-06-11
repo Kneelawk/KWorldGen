@@ -1,28 +1,26 @@
 package org.kneelawk.kworldgen.blocks.items;
 
-import java.util.HashMap;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-import org.kneelawk.kworldgen.blocks.BlockWVariants;
+import org.kneelawk.kworldgen.blocks.IBlockWMeta;
 
-public class ItemBlockWVariants extends ItemBlock {
+public class ItemBlockWMeta extends ItemBlock {
 
-	public ItemBlockWVariants(Block block) {
+	public ItemBlockWMeta(Block block) {
 		super(block);
 		setHasSubtypes(true);
 		setMaxDamage(0);
-		if (!(block instanceof BlockWVariants))
+		if (!(block instanceof IBlockWMeta))
 			throw new IllegalArgumentException(
-					"ItemBlockWVariants should only be used with BlockWVariants");
+					"ItemBlockWEnumVariants should only be used with BlockWEnumVariants");
 	}
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		String name =
-				((BlockWVariants) block).getNameFromMeta(stack.getItemDamage());
+		String name = ((IBlockWMeta) block).getNameFromMeta(stack
+				.getItemDamage());
 		if (name == null || "".equals(name))
 			return super.getUnlocalizedName(stack);
 		return super.getUnlocalizedName(stack) + "." + name;
@@ -32,5 +30,4 @@ public class ItemBlockWVariants extends ItemBlock {
 	public int getMetadata(int damage) {
 		return damage;
 	}
-
 }

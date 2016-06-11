@@ -11,7 +11,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 
-public class BlockPhinterineTable extends BlockWEnumVariants {
+public class BlockPhinterineTable extends BlockWVariants {
 
 	public BlockPhinterineTable(Material blockMaterialIn,
 			MapColor blockMapColorIn) {
