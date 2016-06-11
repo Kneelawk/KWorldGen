@@ -27,8 +27,8 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public abstract class BlockWVariants extends KWGBlock
-		implements IBlockWMeta {
+public abstract class BlockWVariants extends KWGBlock implements IBlockWMeta,
+		IBlockWMetaName {
 	public static final String PROPERTY_AFFILIATOR = "#";
 	public static final String PROPERTY_SEPERATOR = ".";
 
@@ -45,8 +45,7 @@ public abstract class BlockWVariants extends KWGBlock
 	protected BiMap<String, Integer> possibleMeta;
 	protected int maxMeta;
 
-	public BlockWVariants(Material blockMaterialIn,
-			MapColor blockMapColorIn) {
+	public BlockWVariants(Material blockMaterialIn, MapColor blockMapColorIn) {
 		super(blockMaterialIn, blockMapColorIn);
 	}
 
@@ -72,12 +71,12 @@ public abstract class BlockWVariants extends KWGBlock
 	protected void assurePropertyInitialization() {
 		if (properties == null) {
 			// Initialize builders.
-			ImmutableList.Builder<IProperty> propertiesBuilder =
-					ImmutableList.builder();
-			ImmutableList.Builder<BiMap<Integer, Enum>> ordinalsListBuilder =
-					ImmutableList.builder();
-			ImmutableBiMap.Builder<String, Integer> possibleMetaBuilder =
-					ImmutableBiMap.builder();
+			ImmutableList.Builder<IProperty> propertiesBuilder = ImmutableList
+					.builder();
+			ImmutableList.Builder<BiMap<Integer, Enum>> ordinalsListBuilder = ImmutableList
+					.builder();
+			ImmutableBiMap.Builder<String, Integer> possibleMetaBuilder = ImmutableBiMap
+					.builder();
 
 			// Assign values to the contents of properties and ordinalsList.
 			List<EnumVariantInfo> classList = getEnumClasses();
@@ -88,8 +87,8 @@ public abstract class BlockWVariants extends KWGBlock
 				propertiesBuilder.add(pe);
 				Collection vals = pe.getAllowedValues();
 				maxMeta *= vals.size();
-				ImmutableBiMap.Builder<Integer, Enum> ordinals =
-						ImmutableBiMap.builder();
+				ImmutableBiMap.Builder<Integer, Enum> ordinals = ImmutableBiMap
+						.builder();
 				for (Object o : vals) {
 					Enum e = (Enum) o;
 					ordinals.put(e.ordinal(), e);
@@ -125,8 +124,8 @@ public abstract class BlockWVariants extends KWGBlock
 		for (int i = max; i >= 0; i--) {
 			int ord = metaCpy % ordinalsList.get(i).size();
 			metaCpy /= ordinalsList.get(i).size();
-			state = state.withProperty(properties.get(i),
-					ordinalsList.get(i).get(ord));
+			state = state.withProperty(properties.get(i), ordinalsList.get(i)
+					.get(ord));
 		}
 		if (metaCpy != 0)
 			KWGLog.warn(getUnlocalizedName() + ": Invalid item meta: " + meta);
@@ -163,8 +162,7 @@ public abstract class BlockWVariants extends KWGBlock
 	}
 
 	@Override
-	public void getSubBlocks(Item itemIn, CreativeTabs tab,
-			List<ItemStack> list) {
+	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
 		if (properties.size() == 0) {
 			super.getSubBlocks(itemIn, tab, list);
 			return;
@@ -209,6 +207,7 @@ public abstract class BlockWVariants extends KWGBlock
 		return ImmutableList.copyOf(builder);
 	}
 
+	@Override
 	public String getNameFromMeta(int meta) {
 		List<Enum> enums = getEnumsFromMeta(meta);
 		String name = "";

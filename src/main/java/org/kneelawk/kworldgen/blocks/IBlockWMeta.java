@@ -4,6 +4,4 @@ import java.util.Map;
 
 public interface IBlockWMeta {
 	public abstract Map<String, Integer> getPossibleMetaValues();
-
-	public abstract String getNameFromMeta(int meta);
 }
